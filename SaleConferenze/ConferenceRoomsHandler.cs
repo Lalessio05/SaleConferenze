@@ -1,25 +1,28 @@
 ﻿namespace SaleConferenze
 {
-    public enum Province { Varese, Como, Lecco, Milano }
-    internal class ConferenceRoomsHandler
+     class ConferenceRoomsHandler
     {
-        private List<ConferenceRoom> conferenceRooms;
+        protected List<ConferenceRoom> ConferenceRooms { get; private set; }
 
-        public ConferenceRoomsHandler()
+        protected ConferenceRoomsHandler()
         {
-            conferenceRooms = new List<ConferenceRoom>();
+            ConferenceRooms = new List<ConferenceRoom>();
         }
-        public void AddConferenceRoom(ConferenceRoom conferanceRoom)
+        protected void AddConferenceRoom(ConferenceRoom conferanceRoom)
         {
-            conferenceRooms.Add(conferanceRoom);
+            ConferenceRooms.Add(conferanceRoom);
         }
-        public void VisualizeData(Predicate<ConferenceRoom> lambda)
+        protected List<ConferenceRoom> VisualizeData(Predicate<ConferenceRoom> lambda)
         {
-            conferenceRooms.FindAll(lambda).ForEach(Console.WriteLine);
+            return ConferenceRooms.FindAll(lambda);
         }
-        public void SortRooms(Comparison<ConferenceRoom> lambda)
+        protected void SortRooms(Comparison<ConferenceRoom> lambda)
         {
-            conferenceRooms.Sort(lambda);
+            ConferenceRooms.Sort(lambda);
+        }
+        protected void RemoveRooms(Predicate<ConferenceRoom> lamda)
+        {
+            ConferenceRooms.RemoveAll(lamda);
         }
     }
 }

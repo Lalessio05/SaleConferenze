@@ -4,9 +4,37 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
-            var banana = new ConferenceRoomsHandler();
-            banana.SortRooms((p, p1) => 5);
+            var UI = new UI();
+            while (true)
+            {
+                switch (int.Parse(Console.ReadLine() ?? ""))
+                {
+                    case 0:
+                        UI.AddConferenceRoom();
+                        break;
+                    case 1:
+                        UI.ShowAllFromProvince();
+                        break;
+                    case 2:
+                        UI.DisplayRoomsByUsage();
+                        break;
+                    case 3:
+                        UI.ShowConferenceRoomsByMinSeats();
+                        break;
+                    case 4:
+                        UI.ShowConferenceRoomsWithProjectorInProvince();
+                        break;
+                    case 5:
+                        UI.FilterConferenceRoomsWithProjector();
+                        break;
+                    case 6:
+                        UI.ShowConferenceRoomsByLastUsageTime();
+                        break;
+                    default:
+                        break;
+
+                }
+            }
         }
     }
 }
