@@ -6,13 +6,13 @@
         public void AddConferenceRoom()
         {
             int id;
-            Console.WriteLine("ID:\n");
+            Console.WriteLine("ID:");
             if (int.TryParse(Console.ReadLine(), out id))
             {
                 Console.WriteLine("Il valore inserito è invalido");
                 return;
             }
-            Console.WriteLine("Nome:\n");
+            Console.WriteLine("Nome:");
             string? nome = Console.ReadLine();
             if (string.IsNullOrEmpty(nome))
             {
@@ -20,20 +20,20 @@
                 return;
             }
             int sedie;
-            Console.WriteLine("ID:\n");
+            Console.WriteLine("Sedie:");
             if (int.TryParse(Console.ReadLine(), out sedie))
             {
                 Console.WriteLine("Il valore inserito è invalido");
                 return;
             }
             Province province = InputProvince();
-            Console.WriteLine("Quante volte è stata usata?\n");
+            Console.WriteLine("Quante volte è stata usata?");
             if (int.TryParse(Console.ReadLine(), out sedie))
             {
                 Console.WriteLine("Il valore inserito è invalido");
                 return;
             }
-            Console.WriteLine("Il proiettore è presente? Y/N\n");
+            Console.WriteLine("Il proiettore è presente? Y/N");
             char proiettore = Console.ReadLine().ToUpper()[0];
             
             //Non ho voglia di chiedere in input la data
@@ -50,6 +50,7 @@
             {
                 Console.WriteLine(ex.Message);
             }
+            Excep
         }
         public void DisplayRoomsByUsage()
         {
@@ -59,7 +60,7 @@
         }
         public void ShowConferenceRoomsByMinSeats()
         {
-            Console.WriteLine("Valore minimo:\n");
+            Console.WriteLine("Valore minimo:");
             int valoreMinimo;
             if (int.TryParse(Console.ReadLine(), out valoreMinimo))
             {

@@ -9,7 +9,7 @@
             get { return _seats; }
             private set {
                 if (value >= 20 && value <= 200) _seats = value;
-                else throw new ArgumentException("Value must be between 20 and 200");
+                else throw new ArgumentOutOfRangeException("Value must be between 20 and 200");
             }
         }
         public Province Province { get; private set; }
